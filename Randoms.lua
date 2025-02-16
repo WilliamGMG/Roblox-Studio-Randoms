@@ -1,19 +1,5 @@
 local Randoms = {}
 
--- temp
-function make_point(vec) 
-	local newPart = Instance.new("Part");
-
-	newPart.Shape = Enum.PartType.Ball;
-	newPart.Size = Vector3.new(1,1,1);
-	newPart.Position = vec;
-	newPart.BrickColor = BrickColor.new("Bright green");
-	newPart.Material = Enum.Material.Neon;
-	newPart.Name = "Point";
-	newPart.Anchored = true;
-	newPart.Parent = workspace;
-end
-
 -- Module functions
 
 function Randoms.randomInt(min: int, max: int)
@@ -70,8 +56,6 @@ function Randoms.randomRegion3(region1: Region3, region2: Region3, fixedx: boole
 		newVec1 = Vector3.new(newVec1.X, newVec1.Y, region1vec1.Z);
 		newVec2 = Vector3.new(newVec2.X, newVec2.Y, region1vec2.Z);
 	end
-	make_point(newVec1);
-	make_point(newVec2);
 	return Region3.new(newVec1, newVec2);
 end
 
